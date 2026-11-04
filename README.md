@@ -13,6 +13,8 @@ Currently, construction estimators spend hours manually parsing complex, often m
 
 **The Solution:** This AI Copilot reduces a 45-minute manual counting task to roughly 150 milliseconds. It provides a human-in-the-loop validation interface and automates the data pipeline directly to `.xlsx`, eliminating human counting errors and accelerating the estimation workflow.
 
+## OUTPUT LINK : https://drive.google.com/drive/folders/1Zzc3tQFVsEiYHdwE5gWgxaZfhk4yvsDa?usp=sharing
+
 ## Core Features
 * **Automated Feature Extraction:** Custom YOLOv8 Nano model trained to detect `doors`, `windows`, and `zones` on 2D CAD layouts and PDFs.
 * **Human-in-the-Loop Validation:** An interactive Streamlit dashboard that overlays bounding boxes on the original blueprint, allowing estimators to visually verify AI accuracy.
