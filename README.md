@@ -22,3 +22,6 @@ Before a construction company can bid on a project, estimators must perform a **
 * **[OpenPyXL](https://openpyxl.readthedocs.io/):** Automated generation of formatted `.xlsx` enterprise reports.
 * **[Google Colab (T4 GPU)](https://colab.research.google.com/):** High-performance cloud computing environment used for 50-epoch model training.
 * **[Roboflow](https://roboflow.com/):** Dataset aggregation, annotation, and version control for 2,000+ images.
+
+## Dataset Link: https://universe.roboflow.com/floor-plan-rendering/floor-plan-ai-object-detection
+## Output Sceenshot and Pdf: https://drive.google.com/drive/folders/1Zzc3tQFVsEiYHdwE5gWgxaZfhk4yvsDa?usp=sharing
