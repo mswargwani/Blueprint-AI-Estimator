@@ -1,39 +1,24 @@
 # Blueprint-AI-Estimator
+An enterprise-grade AI pipeline designed to automate Construction Quantity Take-off (QTO) and financial estimation. 
 
-# An AI-powered Quantity Takeoff (QTO) copilot that automates door, window, and zone extraction from construction blueprints using YOLOv8 and Streamlit.
+## The Problem
+Before a construction company can bid on a project, estimators must perform a **Quantity Take-off (QTO)**. This involves spending hours manually panning across dense architectural blueprints to count every single door, window, toilet, and sink. 
+* It is a massive bottleneck.
+* It is highly prone to human error (missed items cut directly into profit margins).
+* It wastes valuable estimator time that should be spent on strategic vendor pricing.
 
-#  ARK Takeoff Copilot (AutoQTO-Vision)
+## The Solution
+**Takeoff Copilot** eliminates manual counting and automates the financial math. 
+1. **AI Vision:** A custom-trained YOLOv8 computer vision model scans 2D blueprints and instantly detects 28 distinct architectural classes (Doors, Windows, Plumbing fixtures, etc.).
+2. **Estimator Engine:** The Streamlit dashboard merges the AI's object count with an interactive, localized pricing database. 
+3. **Automated BOQ:** In seconds, it generates a fully calculated Bill of Quantities (BOQ) with material and labor costs, ready for export to Excel.
 
-An end-to-end AI application designed to automate the manual Quantity Takeoff (QTO) process for construction estimators. 
 
-By leveraging a custom-trained YOLOv8 computer vision model, this tool instantly processes architectural floor plans, detects structural features, and generates structured, downloadable estimation reports.
-
-## The Business Problem
-Currently, construction estimators spend hours manually parsing complex, often messy 2D blueprints—clicking, counting, and entering data into Excel to quantify doors, windows, and room areas. 
-
-**The Solution:** This AI Copilot reduces a 45-minute manual counting task to roughly 150 milliseconds. It provides a human-in-the-loop validation interface and automates the data pipeline directly to `.xlsx`, eliminating human counting errors and accelerating the estimation workflow.
-
-## OUTPUT LINK : https://drive.google.com/drive/folders/1Zzc3tQFVsEiYHdwE5gWgxaZfhk4yvsDa?usp=sharing
-
-## Core Features
-* **Automated Feature Extraction:** Custom YOLOv8 Nano model trained to detect `doors`, `windows`, and `zones` on 2D CAD layouts and PDFs.
-* **Human-in-the-Loop Validation:** An interactive Streamlit dashboard that overlays bounding boxes on the original blueprint, allowing estimators to visually verify AI accuracy.
-* **Instant QTO Generation:** A Pandas-driven backend that calculates exact counts and dynamically generates a formatted Excel (`.xlsx`) takeoff report for immediate download.
-* **Edge-Optimized:** Configured for local, CPU-bound execution (tested on AMD Ryzen 5) to handle sensitive client blueprints without relying on external cloud APIs.
-
-## Technology Stack
-* **Computer Vision:** Ultralytics YOLOv8, OpenCV, PyTorch (CPU-Optimized)
-* **Data & Analytics:** Pandas, OpenPyXL
-* **Frontend UI:** Streamlit
-* **Dataset:** 402 Architectural Blueprint Images | Dataset link: https://universe.roboflow.com/tradeplane/floor-plans-500-jbmh9
-
-## Output Accuracy & Model Performance
-The custom YOLOv8 Nano model was trained on 402 architectural blueprint images and validated on an unseen test set. It achieves high precision on critical estimation elements like doors and room boundaries (zones), processing complete layouts in **~130 milliseconds** on a standard CPU.
-# Notes Accuracy Depend on Dataset I used this Dataset utilizing CPU of Ryzen 5U processor 
-
-| Detection Class | mAP50 (Accuracy) | Precision | Recall |
-| :--- | :--- | :--- | :--- |
-| **Doors** | **83.1%** | 82.2% | 81.2% |
-| **Zones (Rooms)** | **80.2%** | 70.4% | 81.7% |
-| **Windows** | **60.9%** | 71.1% | 59.0% |
-| **Overall Model** | **74.7%** | 74.5% | 74.0% |  
+## Tech Stack & Tools
+* **[Python 3.10+](https://www.python.org/):** Core backend logic and data pipelines.
+* **[YOLOv8 (Ultralytics)](https://github.com/ultralytics/ultralytics) & [PyTorch](https://pytorch.org/):** Computer vision model for real-time object detection on architectural plans.
+* **[Streamlit](https://streamlit.io/):** Rapid development of the interactive, web-based estimator dashboard.
+* **[Pandas](https://pandas.pydata.org/):** Data manipulation, tensor-to-dataframe conversion, and complex BOQ math.
+* **[OpenPyXL](https://openpyxl.readthedocs.io/):** Automated generation of formatted `.xlsx` enterprise reports.
+* **[Google Colab (T4 GPU)](https://colab.research.google.com/):** High-performance cloud computing environment used for 50-epoch model training.
+* **[Roboflow](https://roboflow.com/):** Dataset aggregation, annotation, and version control for 2,000+ images.
